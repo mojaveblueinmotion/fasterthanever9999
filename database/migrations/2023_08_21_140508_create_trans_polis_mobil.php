@@ -101,6 +101,7 @@ class CreateTransPolisMobil extends Migration
                 $table->longText('keterangan');
                 $table->text('no_chasis');
                 $table->text('no_mesin');
+                $table->commonFields();
 
                 $table->foreign('polis_id')->references('id')->on('trans_polis_mobil');   
                 $table->foreign('district_id')->references('id')->on('ref_district');
@@ -114,6 +115,7 @@ class CreateTransPolisMobil extends Migration
                 $table->unsignedBigInteger('polis_id');
                 $table->text('bank');
                 $table->text('no_rekening');
+                $table->commonFields();
 
                 $table->foreign('polis_id')->references('id')->on('trans_polis_mobil');   
             }
