@@ -1,0 +1,178 @@
+/*!
+  * Bootstrap v4.6.2 (https://getbootstrap.com/)
+  * Copyright 2011-2022 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+  */
+
+/*!
+ * ApexCharts v3.24.0
+ * (c) 2018-2021 Juned Chhipa
+ * Released under the MIT License.
+ */
+
+/*!
+ * Datepicker for Bootstrap v1.9.0 (https://github.com/uxsolutions/bootstrap-datepicker)
+ *
+ * Licensed under the Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+ */
+
+/*!
+ * Select2 4.0.13
+ * https://select2.github.io
+ *
+ * Released under the MIT license
+ * https://github.com/select2/select2/blob/master/LICENSE.md
+ */
+
+/*!
+ * Sizzle CSS Selector Engine v2.3.4
+ * https://sizzlejs.com/
+ *
+ * Copyright JS Foundation and other contributors
+ * Released under the MIT license
+ * https://js.foundation/
+ *
+ * Date: 2019-04-08
+ */
+
+/*!
+ * Timepicker Component for Twitter Bootstrap
+ *
+ * Copyright 2013 Joris de Wit and bootstrap-timepicker contributors
+ *
+ * Contributors https://github.com/jdewit/bootstrap-timepicker/graphs/contributors
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/*!
+ * jQuery Form Plugin
+ * version: 3.51.0-2014.06.20
+ * Requires jQuery v1.5 or later
+ * Copyright (c) 2014 M. Alsup
+ * Examples and documentation at: http://malsup.com/jquery/form/
+ * Project repository: https://github.com/malsup/form
+ * Dual licensed under the MIT and GPL licenses.
+ * https://github.com/malsup/form#copyright-and-license
+ */
+
+/*!
+ * jQuery JavaScript Library v3.4.1
+ * https://jquery.com/
+ *
+ * Includes Sizzle.js
+ * https://sizzlejs.com/
+ *
+ * Copyright JS Foundation and other contributors
+ * Released under the MIT license
+ * https://jquery.org/license
+ *
+ * Date: 2019-05-01T21:04Z
+ */
+
+/*!
+ * jQuery Mousewheel 3.1.13
+ *
+ * Copyright jQuery Foundation and other contributors
+ * Released under the MIT license
+ * http://jquery.org/license
+ */
+
+/*!
+ * jQuery blockUI plugin
+ * Version 2.70.0-2014.11.23
+ * Requires jQuery v1.7 or later
+ *
+ * Examples at: http://malsup.com/jquery/block/
+ * Copyright (c) 2007-2013 M. Alsup
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ * Thanks to Amir-Hossein Sobhi for some excellent contributions!
+ */
+
+/*!
+ * perfect-scrollbar v1.5.0
+ * Copyright 2020 Hyunje Jun, MDBootstrap and Contributors
+ * Licensed under MIT
+ */
+
+/*!
+ * typeahead.js 0.11.1
+ * https://github.com/twitter/typeahead.js
+ * Copyright 2013-2015 Twitter, Inc. and other contributors; Licensed MIT
+ */
+
+/*! DataTables 1.13.1
+ * ©2008-2022 SpryMedia Ltd - datatables.net/license
+ */
+
+/*! DataTables Bootstrap 4 integration
+ * ©2011-2017 SpryMedia Ltd - datatables.net/license
+ */
+
+/*! Select2 4.0.13 | https://github.com/select2/select2/blob/master/LICENSE.md */
+
+/*! svg.draggable.js - v2.2.2 - 2019-01-08
+  * https://github.com/svgdotjs/svg.draggable.js
+  * Copyright (c) 2019 Wout Fierens; Licensed MIT */
+
+/*! svg.filter.js - v2.0.2 - 2016-02-24
+  * https://github.com/wout/svg.filter.js
+  * Copyright (c) 2016 Wout Fierens; Licensed MIT */
+
+/**
+ * Sticky.js
+ * Library for sticky elements written in vanilla javascript. With this library you can easily set sticky elements on your website. It's also responsive.
+ *
+ * @version 1.3.0
+ * @author Rafal Galus <biuro@rafalgalus.pl>
+ * @website https://rgalus.github.io/sticky-js/
+ * @repo https://github.com/rgalus/sticky-js
+ * @license https://github.com/rgalus/sticky-js/blob/master/LICENSE
+ */
+
+/**
+* @version: 3.1
+* @author: Dan Grossman http://www.dangrossman.info/
+* @copyright: Copyright (c) 2012-2019 Dan Grossman. All rights reserved.
+* @license: Licensed under the MIT license. See http://www.opensource.org/licenses/mit-license.php
+* @website: http://www.daterangepicker.com/
+*/
+
+/**!
+ * @fileOverview Kickass library to create and place poppers near their reference elements.
+ * @version 1.16.1
+ * @license
+ * Copyright (c) 2016 Federico Zivolo and contributors
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+/*@preserve
+ * Tempus Dominus Bootstrap4 v5.1.2 (https://tempusdominus.github.io/bootstrap-4/)
+ * Copyright 2016-2018 Jonathan Peterson
+ * Licensed under MIT (https://github.com/tempusdominus/bootstrap-3/blob/master/LICENSE)
+ */
+
+//! moment.js
+
+//! moment.js locale configuration
