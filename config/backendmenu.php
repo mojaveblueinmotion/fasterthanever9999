@@ -22,7 +22,7 @@ return [
         'submenu' => [
                 [
                     'name'  => 'asuransi.polis-mobil',
-                    'perms' => 'asuransi.polis-mobil',
+                    'perms' => 'master',
                     'title' => 'Asuransi Mobil',
                     'url'   => '/asuransi/polis-mobil',
                 ],
@@ -156,6 +156,23 @@ return [
                         'name' => 'fitur-asuransi',
                         'title' => 'Fitur Asuransi',
                         'url' => '/master/data-asuransi/fitur-asuransi',
+                    ],
+                ]
+            ],
+            [
+                'name' => 'asuransi-mobil',
+                'title' => 'Asuransi Properti',
+                'url' => '',
+                'submenu' => [
+                    [
+                        'name' => 'okupasi',
+                        'title' => 'Okupasi',
+                        'url' => '/master/asuransi-properti/okupasi'
+                    ],
+                    [
+                        'name' => 'asuransi-properti',
+                        'title' => 'Asuransi Properti',
+                        'url' => '/master/asuransi-properti/asuransi-properti'
                     ],
                 ]
             ],

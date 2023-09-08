@@ -10,6 +10,7 @@ use App\Models\Knowledge\Knowledge;
 use App\Models\Master\Asset;
 use App\Models\Master\AssetDetail;
 use App\Models\Master\AssetType;
+use App\Models\Master\AsuransiMobil\AsuransiMobil;
 use App\Models\Master\DataAsuransi\FiturAsuransi;
 use App\Models\Master\DataAsuransi\IntervalPembayaran;
 use App\Models\Master\DataAsuransi\PerusahaanAsuransi;
@@ -571,5 +572,40 @@ class AjaxController extends Controller
             $results[] = ['id' => $item->id, 'text' => $item->code . ' (' . $item->model . ')'];
         }
         return response()->json(compact('results', 'more'));
+    }
+
+    // ==========================================================
+    public function selectAgent($search, Request $request)
+    {
+        $items = User::keywordBy('name')->orderBy('name');
+        switch ($search) {
+            case 'all':
+                $items = $items->whereHas(
+                    'roles',
+                    function ($q) {
+                        $q->where('id', 2);
+                    });
+                break;
+            default:
+                $items = $items->whereNull('id');
+                break;
+        }
+        $items = $items->paginate();
+        return $this->responseSelect2($items, 'name', 'id');
+    }
+
+    public function selectAsuransiMobil($search, Request $request)
+    {
+        $items = AsuransiMobil::keywordBy('name')->orderBy('name');
+        switch ($search) {
+            case 'all':
+                $items = $items;
+                break;
+            default:
+                $items = $items->whereNull('id');
+                break;
+        }
+        $items = $items->paginate();
+        return $this->responseSelect2($items, 'name', 'id');
     }
 }

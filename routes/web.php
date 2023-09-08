@@ -97,6 +97,9 @@ Route::middleware('auth')
                         Route::post('{search}/selectSeri', 'AjaxController@selectSeri')->name('selectSeri');
                         Route::post('seriOptions', 'AjaxController@seriOptions')->name('seriOptions');
 
+                        // For Polis Mobil
+                        Route::post('{search}/selectAgent', 'AjaxController@selectAgent')->name('selectAgent');
+                        Route::post('{search}/selectAsuransiMobil', 'AjaxController@selectAsuransiMobil')->name('selectAsuransiMobil');
                     }
                 );
 
@@ -228,6 +231,18 @@ Route::middleware('auth')
                         Route::grid('severity', 'SeverityController');
 
                         // ASURANSI
+                        Route::namespace('AsuransiProperti')
+                            ->prefix('asuransi-properti')
+                            ->name('asuransi-properti.')
+                            ->group(
+                                function () {
+                                    Route::grid('okupasi', 'OkupasiController');
+
+                                    Route::grid('asuransi-properti', 'AsuransiPropertiController');
+                                }
+                            );
+
+                        // ASURANSI Mobil
                         Route::namespace('AsuransiMobil')
                             ->prefix('asuransi-mobil')
                             ->name('asuransi-mobil.')

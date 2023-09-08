@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Asuransi\AsuransiMobilApiController;
+use App\Http\Controllers\Api\Asuransi\AsuransiPropertiApiController;
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\Auth\MasterController;
 use App\Http\Controllers\Api\Auth\UserRegisterController;
@@ -47,6 +48,8 @@ Route::post('agentAsuransiMobil', [AsuransiMobilApiController::class, 'agentAsur
 Route::post('agentPenawaranAsuransiMobil', [AsuransiMobilApiController::class, 'agentPenawaranAsuransiMobil']);
 Route::post('testFiles', [AsuransiMobilApiController::class, 'testFiles']);
 
+Route::post('agentAsuransiProperti', [AsuransiPropertiApiController::class, 'agentAsuransiProperti']);
+Route::post('agentPenawaranAsuransiProperti', [AsuransiPropertiApiController::class, 'agentPenawaranAsuransiProperti']);
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });

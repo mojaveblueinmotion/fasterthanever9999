@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Asuransi;
+namespace App\Models\AsuransiProperti;
 
 use Exception;
 use App\Models\Model;
@@ -8,21 +8,21 @@ use App\Models\Auth\User;
 use Illuminate\Support\Carbon;
 use App\Models\Traits\HasFiles;
 use App\Models\Traits\HasApprovals;
-use App\Models\Asuransi\PolisMobilCek;
-use App\Models\Asuransi\PolisMobilNilai;
-use App\Models\Asuransi\PolisMobilClient;
-use App\Models\Asuransi\PolisMobilPayment;
-use App\Models\Master\AsuransiMobil\AsuransiMobil;
+use App\Models\AsuransiProperti\PolisPropertiCek;
+use App\Models\AsuransiProperti\PolisPropertiNilai;
+use App\Models\AsuransiProperti\PolisPropertiPayment;
+use App\Models\Master\AsuransiProperti\AsuransiProperti;
 
-class PolisMobil extends Model
+class PolisProperti extends Model
 {
     use HasApprovals;
     use HasFiles;
 
-    protected $table = 'trans_polis_mobil';
+    protected $table = 'trans_polis_properti';
 
     protected $fillable = [
         'no_asuransi',
+        // 'no_max',
         'tanggal',
         'agent_id',
         'asuransi_id',
@@ -97,27 +97,22 @@ class PolisMobil extends Model
 
     public function detailCek()
     {
-        return $this->hasOne(PolisMobilCek::class, 'polis_id');
+        return $this->hasOne(PolisPropertiCek::class, 'polis_id');
     }
 
     public function detailNilai()
     {
-        return $this->hasOne(PolisMobilNilai::class, 'polis_id');
-    }
-
-    public function detailClient()
-    {
-        return $this->hasOne(PolisMobilClient::class, 'polis_id');
+        return $this->hasOne(PolisPropertiNilai::class, 'polis_id');
     }
 
     public function detailPayment()
     {
-        return $this->hasOne(PolisMobilPayment::class, 'polis_id');
+        return $this->hasOne(PolisPropertiPayment::class, 'polis_id');
     }
 
     public function asuransi()
     {
-        return $this->belongsTo(AsuransiMobil::class, 'asuransi_id');
+        return $this->belongsTo(AsuransiProperti::class, 'asuransi_id');
     }
     /*******************************
      ** SCOPE
@@ -128,7 +123,7 @@ class PolisMobil extends Model
         return $query->latest();
     }
 
-    public function scopePolisMobilGrid($query)
+    public function scopePolisPropertiGrid($query)
     {
         return $query->where('status', 'completed')->latest();
     }
