@@ -51,7 +51,7 @@ Route::post('testFiles', [AsuransiMobilApiController::class, 'testFiles']);
 Route::post('agentAsuransiProperti', [AsuransiPropertiApiController::class, 'agentAsuransiProperti']);
 Route::post('agentPenawaranAsuransiProperti', [AsuransiPropertiApiController::class, 'agentPenawaranAsuransiProperti']);
 Route::get('selectAsuransiProperti', [MasterController::class, 'selectAsuransiProperti']);
-Route::get('selectOkupasi', [MasterController::class, 'selectOkupasi']);
+Route::get('selectOkupasi/{okupasi}', [MasterController::class, 'selectOkupasi']);
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();

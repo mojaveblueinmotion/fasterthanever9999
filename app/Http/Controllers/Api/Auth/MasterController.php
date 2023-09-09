@@ -322,9 +322,9 @@ class MasterController extends BaseController
         }
     }
 
-    public function selectOkupasi($merk){
+    public function selectOkupasi($okupasi){
         try{
-            $record =  Okupasi::where('name', 'like', '%' . $merk . '%')->get();
+            $record =  Okupasi::where('name', 'like', '%' . $okupasi . '%')->get();
 
             return response()->json([
                 'success' => true,
