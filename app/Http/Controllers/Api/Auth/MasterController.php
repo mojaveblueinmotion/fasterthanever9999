@@ -22,6 +22,8 @@ use App\Models\Master\AsuransiMobil\TipePemakaian;
 use App\Models\Master\DatabaseMobil\TipeKendaraan;
 use App\Models\Master\AsuransiMobil\KondisiKendaraan;
 use App\Models\Master\AsuransiMobil\LuasPertanggungan;
+use App\Models\Master\AsuransiProperti\AsuransiProperti;
+use App\Models\Master\AsuransiProperti\Okupasi;
 
 class MasterController extends BaseController
 {
@@ -291,6 +293,43 @@ class MasterController extends BaseController
                 'success' => true,
                 'message' => "Data Kelurahan",
                 'data' => $record,
+
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ]);
+        }
+    }
+
+    // Asuransi Properti
+    public function selectAsuransiProperti(){
+        try{
+            $record =  AsuransiProperti::all();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Asuransi Properti",
+                'data' => $record
+
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ]);
+        }
+    }
+
+    public function selectOkupasi($merk){
+        try{
+            $record =  Okupasi::where('name', 'like', '%' . $merk . '%')->get();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Okupasi",
+                'data' => $record
 
             ]);
         }catch(Exception $e){
