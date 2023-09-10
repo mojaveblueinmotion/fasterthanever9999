@@ -160,7 +160,7 @@ return [
                 ]
             ],
             [
-                'name' => 'asuransi-mobil',
+                'name' => 'asuransi-properti',
                 'title' => 'Asuransi Properti',
                 'url' => '',
                 'submenu' => [
@@ -252,6 +252,38 @@ return [
                         'name' => 'kode-plat',
                         'title' => 'Kode Plat',
                         'url' => '/master/database-mobil/kode-plat'
+                    ],
+                ]
+            ],
+            [
+                'name' => 'asuransi-motor',
+                'title' => 'Asuransi Motor',
+                'url' => '',
+                'submenu' => [
+                    [
+                        'name' => 'asuransi-motor',
+                        'title' => 'Asuransi Motor',
+                        'url' => '/master/asuransi-motor/asuransi-motor'
+                    ],
+                    [
+                        'name' => 'merk',
+                        'title' => 'Merk Motor',
+                        'url' => '/master/asuransi-motor/merk'
+                    ],
+                    [
+                        'name' => 'seri',
+                        'title' => 'Seri Motor',
+                        'url' => '/master/asuransi-motor/seri'
+                    ],
+                    [
+                        'name' => 'tahun',
+                        'title' => 'Tahun Motor',
+                        'url' => '/master/asuransi-motor/tahun'
+                    ],
+                    [
+                        'name' => 'tipe-motor',
+                        'title' => 'Tipe Motor',
+                        'url' => '/master/asuransi-motor/tipe-motor'
                     ],
                 ]
             ],

@@ -22,6 +22,7 @@ use App\Models\Master\AsuransiMobil\TipePemakaian;
 use App\Models\Master\DatabaseMobil\TipeKendaraan;
 use App\Models\Master\AsuransiMobil\KondisiKendaraan;
 use App\Models\Master\AsuransiMobil\LuasPertanggungan;
+use App\Models\Master\AsuransiMotor\AsuransiMotor;
 use App\Models\Master\AsuransiProperti\AsuransiProperti;
 use App\Models\Master\AsuransiProperti\Okupasi;
 

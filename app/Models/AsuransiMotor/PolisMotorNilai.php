@@ -1,19 +1,28 @@
 <?php
 
-namespace App\Models\Asuransi;
+namespace App\Models\AsuransiMotor;
 
 use App\Models\Model;
 use Illuminate\Support\Carbon;
-use App\Models\Asuransi\PolisMobil;
+use App\Models\AsuransiMotor\PolisMotor;
 
-class PolisMobilPayment extends Model
+class PolisMotorNilai extends Model
 {
-    protected $table = 'trans_polis_mobil_payment';
+    protected $table = 'trans_polis_motor_nilai';
 
     protected $fillable = [
         'polis_id',
-        'bank',
-        'no_rekening',
+        'rincian_modifikasi',
+        'nilai_modifikasi',
+        'tipe',
+        'nilai_motor',
+        'nilai_pertanggungan',
+        'tahun_awal',
+        'tahun_akhir',
+        'pemakaian',
+        'tanggal_awal',
+        'tanggal_akhir',
+        'no_plat',
     ];
 
     /*******************************
@@ -29,7 +38,7 @@ class PolisMobilPayment extends Model
      *******************************/
     public function polis()
     {
-        return $this->belongsTo(PolisMobil::class, 'polis_id');
+        return $this->belongsTo(PolisMotor::class, 'polis_id');
     }
 
     /*******************************
@@ -43,7 +52,7 @@ class PolisMobilPayment extends Model
 
     public function scopeFilters($query)
     {
-        return $query->filterBy(['nama']);
+        return $query->filterBy(['rincian_modifikasi']);
     }
 
     /*******************************
@@ -80,7 +89,7 @@ class PolisMobilPayment extends Model
 
     public function saveLogNotify()
     {
-        $data = $this->nama;
+        $data = $this->tipe;
         $routes = request()->get('routes');
         switch (request()->route()->getName()) {
             case $routes . '.store':

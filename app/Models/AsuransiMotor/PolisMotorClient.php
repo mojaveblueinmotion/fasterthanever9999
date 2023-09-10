@@ -1,19 +1,33 @@
 <?php
 
-namespace App\Models\Asuransi;
+namespace App\Models\AsuransiMotor;
 
 use App\Models\Model;
 use Illuminate\Support\Carbon;
-use App\Models\Asuransi\PolisMobil;
+use App\Models\AsuransiMotor\PolisMotor;
+use App\Models\Master\Geo\City;
+use App\Models\Master\Geo\District;
+use App\Models\Master\Geo\Province;
+use App\Models\Master\Geo\Village;
 
-class PolisMobilPayment extends Model
+class PolisMotorClient extends Model
 {
-    protected $table = 'trans_polis_mobil_payment';
+    protected $table = 'trans_polis_motor_client';
 
     protected $fillable = [
         'polis_id',
-        'bank',
-        'no_rekening',
+        'nama',
+        'phone',
+        'email',
+        'province_id',
+        'city_id',
+        'district_id',
+        'village',
+        'alamat',
+        'warna',
+        'keterangan',
+        'no_chasis',
+        'no_mesin',
     ];
 
     /*******************************
@@ -29,7 +43,22 @@ class PolisMobilPayment extends Model
      *******************************/
     public function polis()
     {
-        return $this->belongsTo(PolisMobil::class, 'polis_id');
+        return $this->belongsTo(PolisMotor::class, 'polis_id');
+    }
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class, 'province_id');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
+
+    public function district()
+    {
+        return $this->belongsTo(District::class, 'district_id');
     }
 
     /*******************************

@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Models\Asuransi;
+namespace App\Models\AsuransiMotor;
 
 use App\Models\Model;
 use Illuminate\Support\Carbon;
-use App\Models\Asuransi\PolisMobil;
+use App\Models\AsuransiMotor\PolisMobil;
 
-class PolisMobilPayment extends Model
+class PolisMotorPayment extends Model
 {
-    protected $table = 'trans_polis_mobil_payment';
+    protected $table = 'trans_polis_motor_payment';
 
     protected $fillable = [
         'polis_id',
@@ -29,7 +29,7 @@ class PolisMobilPayment extends Model
      *******************************/
     public function polis()
     {
-        return $this->belongsTo(PolisMobil::class, 'polis_id');
+        return $this->belongsTo(PolisMotor::class, 'polis_id');
     }
 
     /*******************************

@@ -100,6 +100,14 @@ Route::middleware('auth')
                         // For Polis Mobil
                         Route::post('{search}/selectAgent', 'AjaxController@selectAgent')->name('selectAgent');
                         Route::post('{search}/selectAsuransiMobil', 'AjaxController@selectAsuransiMobil')->name('selectAsuransiMobil');
+
+                        // For Asuransi Motor
+                        Route::post('{search}/selectMerkMotor', 'AjaxMotorController@selectMerkMotor')->name('selectMerkMotor');
+                        Route::post('{search}/selectTahunMotor', 'AjaxMotorController@selectTahunMotor')->name('selectTahunMotor');
+                        Route::post('tahunMotorOptions', 'AjaxMotorController@tahunMotorOptions')->name('tahunMotorOptions');
+                        Route::post('{search}/selectSeriMotor', 'AjaxMotorController@selectSeriMotor')->name('selectSeriMotor');
+                        Route::post('seriMotorOptions', 'AjaxMotorController@seriMotorOptions')->name('seriMotorOptions');
+                        Route::post('{search}/selectAsuransiMotor', 'AjaxMotorController@selectAsuransiMotor')->name('selectAsuransiMotor');
                     }
                 );
 
@@ -230,7 +238,7 @@ Route::middleware('auth')
                         Route::post('severity/import-save', 'SeverityController@import-save')->name('severity.import-save');
                         Route::grid('severity', 'SeverityController');
 
-                        // ASURANSI
+                        // ASURANSI Properti
                         Route::namespace('AsuransiProperti')
                             ->prefix('asuransi-properti')
                             ->name('asuransi-properti.')
@@ -239,6 +247,26 @@ Route::middleware('auth')
                                     Route::grid('okupasi', 'OkupasiController');
 
                                     Route::grid('asuransi-properti', 'AsuransiPropertiController');
+                                }
+                            );
+
+                        // ASURANSI Mobil
+                        Route::namespace('AsuransiMotor')
+                            ->prefix('asuransi-motor')
+                            ->name('asuransi-motor.')
+                            ->group(
+                                function () {
+                                    Route::grid('asuransi-motor', 'AsuransiMotorController');
+
+                                    Route::grid('merk', 'MerkController');
+
+                                    Route::grid('tahun', 'TahunController');
+
+                                    Route::grid('tipe', 'TipeController');
+
+                                    Route::grid('seri', 'SeriController');
+
+                                    Route::grid('tipe-motor', 'TipeMotorController');
                                 }
                             );
 
