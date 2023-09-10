@@ -108,6 +108,9 @@ Route::middleware('auth')
                         Route::post('{search}/selectSeriMotor', 'AjaxMotorController@selectSeriMotor')->name('selectSeriMotor');
                         Route::post('seriMotorOptions', 'AjaxMotorController@seriMotorOptions')->name('seriMotorOptions');
                         Route::post('{search}/selectAsuransiMotor', 'AjaxMotorController@selectAsuransiMotor')->name('selectAsuransiMotor');
+
+                        // For Asuransi Perjalanan
+                        Route::post('{search}/selectAsuransiPerjalanan', 'AjaxController@selectAsuransiPerjalanan')->name('selectAsuransiPerjalanan');
                     }
                 );
 
@@ -333,6 +336,8 @@ Route::middleware('auth')
                                     Route::grid('jenis-perjalanan', 'JenisPerjalananController');
 
                                     Route::grid('tipe-perlindungan', 'TipePerlindunganController');
+
+                                    Route::grid('asuransi-perjalanan', 'AsuransiPerjalananController');
                                 }
                             );
 

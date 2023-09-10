@@ -23,6 +23,7 @@ use App\Models\Master\DatabaseMobil\TipeKendaraan;
 use App\Models\Master\AsuransiMobil\KondisiKendaraan;
 use App\Models\Master\AsuransiMobil\LuasPertanggungan;
 use App\Models\Master\AsuransiMotor\AsuransiMotor;
+use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
 use App\Models\Master\AsuransiProperti\AsuransiProperti;
 use App\Models\Master\AsuransiProperti\Okupasi;
 
@@ -330,6 +331,26 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => true,
                 'message' => "Data Okupasi",
+                'data' => $record
+
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ]);
+        }
+    }
+
+
+    // Perjalanan
+    public function selectAsuransiPerjalanan(){
+        try{
+            $record =  AsuransiPerjalanan::all();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Asuransi Perjalanan",
                 'data' => $record
 
             ]);

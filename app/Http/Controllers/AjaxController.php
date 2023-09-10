@@ -4,31 +4,32 @@ namespace App\Http\Controllers;
 
 use App\Models\Auth\Role;
 use App\Models\Auth\User;
-use App\Models\Change\Change;
-use App\Models\Incident\Incident;
-use App\Models\Knowledge\Knowledge;
 use App\Models\Master\Asset;
-use App\Models\Master\AssetDetail;
-use App\Models\Master\AssetType;
-use App\Models\Master\AsuransiMobil\AsuransiMobil;
-use App\Models\Master\DataAsuransi\FiturAsuransi;
-use App\Models\Master\DataAsuransi\IntervalPembayaran;
-use App\Models\Master\DataAsuransi\PerusahaanAsuransi;
-use App\Models\Master\DatabaseMobil\Merk;
-use App\Models\Master\DatabaseMobil\Seri;
-use App\Models\Master\DatabaseMobil\Tahun;
+use Illuminate\Http\Request;
+use App\Models\Change\Change;
 use App\Models\Master\Geo\City;
-use App\Models\Master\Geo\Province;
-use App\Models\Setting\Globals\Notification;
-use App\Models\Setting\Globals\TempFiles;
-use App\Models\Master\Org\Struct;
-use App\Models\Master\Org\Position;
-use App\Models\Master\Pegawai\Pegawai;
 use App\Models\Master\Priority;
-use App\Models\Master\RoleGroup;
 use App\Models\Master\Severity;
 use App\Models\Problem\Problem;
-use Illuminate\Http\Request;
+use App\Models\Master\AssetType;
+use App\Models\Master\RoleGroup;
+use App\Models\Incident\Incident;
+use App\Models\Master\Org\Struct;
+use App\Models\Master\AssetDetail;
+use App\Models\Knowledge\Knowledge;
+use App\Models\Master\Geo\Province;
+use App\Models\Master\Org\Position;
+use App\Models\Master\Pegawai\Pegawai;
+use App\Models\Master\DatabaseMobil\Merk;
+use App\Models\Master\DatabaseMobil\Seri;
+use App\Models\Setting\Globals\TempFiles;
+use App\Models\Master\DatabaseMobil\Tahun;
+use App\Models\Setting\Globals\Notification;
+use App\Models\Master\DataAsuransi\FiturAsuransi;
+use App\Models\Master\AsuransiMobil\AsuransiMobil;
+use App\Models\Master\DataAsuransi\IntervalPembayaran;
+use App\Models\Master\DataAsuransi\PerusahaanAsuransi;
+use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
 
 class AjaxController extends Controller
 {
@@ -597,6 +598,22 @@ class AjaxController extends Controller
     public function selectAsuransiMobil($search, Request $request)
     {
         $items = AsuransiMobil::keywordBy('name')->orderBy('name');
+        switch ($search) {
+            case 'all':
+                $items = $items;
+                break;
+            default:
+                $items = $items->whereNull('id');
+                break;
+        }
+        $items = $items->paginate();
+        return $this->responseSelect2($items, 'name', 'id');
+    }
+
+    // Asuransi Perjalanan
+    public function selectAsuransiPerjalanan($search, Request $request)
+    {
+        $items = AsuransiPerjalanan::keywordBy('name')->orderBy('name');
         switch ($search) {
             case 'all':
                 $items = $items;

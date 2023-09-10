@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\Auth\UserRegisterController;
 use App\Http\Controllers\Api\Asuransi\AsuransiMobilApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiMotorApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiPropertiApiController;
+use App\Http\Controllers\Api\Asuransi\AsuransiPerjalananApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +73,13 @@ Route::get('selectTahunMotor/{seri_id}', [MasterMotorController::class, 'selectT
 Route::get('selectTipeMotor', [MasterMotorController::class, 'selectTipeMotor']);
 Route::get('selectSeriMotor/{merk_id}', [MasterMotorController::class, 'selectSeriMotor']);
 
+// Motor
 Route::post('agentAsuransiMotor', [AsuransiMotorApiController::class, 'agentAsuransiMotor']);
 Route::post('agentPenawaranAsuransiMotor', [AsuransiMotorApiController::class, 'agentPenawaranAsuransiMotor']);
 Route::post('testFilesMotor', [AsuransiMotorApiController::class, 'testFilesMotor']);
+
+// Perjalanan
+Route::get('selectAsuransiPerjalanan', [MasterController::class, 'selectAsuransiPerjalanan']);
+Route::post('agentAsuransiPerjalanan', [AsuransiPerjalananApiController::class, 'agentAsuransiPerjalanan']);
+Route::post('agentPenawaranAsuransiPerjalanan', [AsuransiPerjalananApiController::class, 'agentPenawaranAsuransiPerjalanan']);
+Route::post('testFilesPerjalanan', [AsuransiPerjalananApiController::class, 'testFilesPerjalanan']);

@@ -293,6 +293,11 @@ return [
                 'url' => '',
                 'submenu' => [
                     [
+                        'name' => 'asuransi-perjalanan',
+                        'title' => 'Asuransi Perjalanan',
+                        'url' => '/master/asuransi-perjalanan/asuransi-perjalanan'
+                    ],
+                    [
                         'name' => 'jenis-perjalanan',
                         'title' => 'Jenis Perjalanan',
                         'url' => '/master/asuransi-perjalanan/jenis-perjalanan'
