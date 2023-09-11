@@ -25,13 +25,13 @@ class AsuransiPropertiApiController extends Controller
             $record->status = 'penawaran';
             $record->save();
 
-            $recordCek = PolisPropertiCek::firstOrNew(['polis_id', $record->id]); 
-            $recordCek->fill($request->only($recordCek->fillable));
-            $recordCek->save();
+            // $recordCek = PolisPropertiCek::firstOrNew(['polis_id', $record->id]); 
+            // $recordCek->fill($request->only($recordCek->fillable));
+            // $recordCek->save();
             
-            $recordNilai = PolisPropertiNilai::firstOrNew(['polis_id', $record->id]); 
-            $recordNilai->fill($request->only($recordNilai->fillable));
-            $recordNilai->save();
+            // $recordNilai = PolisPropertiNilai::firstOrNew(['polis_id', $record->id]); 
+            // $recordNilai->fill($request->only($recordNilai->fillable));
+            // $recordNilai->save();
 
             return response()->json([
                 'success' => true,
@@ -41,7 +41,7 @@ class AsuransiPropertiApiController extends Controller
         }catch(Exception $e){
             return response()->json([
                 'success' => false,
-                'message' => $e
+                'message' => $e,
             ]);
         }
     }
