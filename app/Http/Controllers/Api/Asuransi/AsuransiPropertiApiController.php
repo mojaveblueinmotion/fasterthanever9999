@@ -17,7 +17,7 @@ class AsuransiPropertiApiController extends Controller
     public function agentAsuransiProperti(Request $request){
         try{
             // $noAsuransi = PolisMobil::generateNoAsuransi();
-            $record = new PolisProperti;   
+            $record = PolisProperti::firstOrNew(['no_asuransi', $request->no_asuransi]);   
             $record->fill($request->only($record->fillable));
             // $record->no_asuransi = $noAsuransi->no_asuransi;
             // $record->no_max = $noAsuransi->no_max;
@@ -25,12 +25,12 @@ class AsuransiPropertiApiController extends Controller
             $record->status = 'penawaran';
             $record->save();
 
-            $recordCek = new PolisPropertiCek;   
+            $recordCek = PolisPropertiCek::firstOrNew(['polis_id', $record->id]); 
             $recordCek->fill($request->only($recordCek->fillable));
             $recordCek->polis_id = $record->id;
             $recordCek->save();
             
-            $recordNilai = new PolisPropertiNilai;   
+            $recordNilai = PolisPropertiNilai::firstOrNew(['polis_id', $record->id]); 
             $recordNilai->fill($request->only($recordNilai->fillable));
             $recordNilai->polis_id = $record->id;
             $recordNilai->save();

@@ -19,7 +19,7 @@ class AsuransiMobilApiController extends BaseController
     public function agentAsuransiMobil(Request $request){
         try{
             // $noAsuransi = PolisMobil::generateNoAsuransi();
-            $record = new PolisMobil;   
+            $record = PolisMobil::firstOrNew(['no_asuransi', $request->no_asuransi]);   
             $record->fill($request->only($record->fillable));
             // $record->no_asuransi = $noAsuransi->no_asuransi;
             // $record->no_max = $noAsuransi->no_max;
@@ -27,14 +27,13 @@ class AsuransiMobilApiController extends BaseController
             $record->status = 'penawaran';
             $record->save();
 
-            $recordCek = new PolisMobilCek;   
+            $recordCek = PolisMobilCek::firstOrNew(['polis_id', $record->id]); 
             $recordCek->fill($request->only($recordCek->fillable));
-            $recordCek->polis_id = $record->id;
             $recordCek->save();
             
-            $recordNilai = new PolisMobilNilai;   
+            $recordNilai = PolisMobilCek::firstOrNew(['polis_id', $record->id]); 
             $recordNilai->fill($request->only($recordNilai->fillable));
-            $recordNilai->polis_id = $record->id;
+            // $recordNilai->polis_id = $record->id;
             $recordNilai->save();
 
             return response()->json([
