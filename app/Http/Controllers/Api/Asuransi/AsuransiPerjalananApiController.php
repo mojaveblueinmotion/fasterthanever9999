@@ -16,7 +16,7 @@ class AsuransiPerjalananApiController extends BaseController
     public function agentAsuransiPerjalanan(Request $request){
         try{
             // $noAsuransi = PolisPerjalanan::generateNoAsuransi();
-            $record = PolisPerjalanan::firstOrNew(['no_asuransi', $request->no_asuransi]);   
+            $record = PolisPerjalanan::firstOrNew(['no_asuransi' => $request->no_asuransi]);   
             $record->fill($request->only($record->fillable));
             // $record->no_asuransi = $noAsuransi->no_asuransi;
             // $record->no_max = $noAsuransi->no_max;
