@@ -27,12 +27,10 @@ class AsuransiPropertiApiController extends Controller
 
             $recordCek = PolisPropertiCek::firstOrNew(['polis_id', $record->id]); 
             $recordCek->fill($request->only($recordCek->fillable));
-            $recordCek->polis_id = $record->id;
             $recordCek->save();
             
             $recordNilai = PolisPropertiNilai::firstOrNew(['polis_id', $record->id]); 
             $recordNilai->fill($request->only($recordNilai->fillable));
-            $recordNilai->polis_id = $record->id;
             $recordNilai->save();
 
             return response()->json([
