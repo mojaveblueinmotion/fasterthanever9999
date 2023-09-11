@@ -17,22 +17,18 @@ class AsuransiPropertiApiController extends Controller
     public function agentAsuransiProperti(Request $request){
         try{
             // $noAsuransi = PolisMobil::generateNoAsuransi();
-            $record = PolisProperti::firstOrNew(['no_asuransi', $request->no_asuransi]);   
-            $record->fill($request->only($record->fillable));
-            // $record->no_asuransi = $noAsuransi->no_asuransi;
-            // $record->no_max = $noAsuransi->no_max;
-            // $record->no_max = "001";
+            $record = PolisProperti::firstOrNew(['no_asuransi' => $request->no_asuransi]);   
+            $record->fill($request->only($record->getFillable()));
             $record->status = 'penawaran';
             $record->save();
 
-            // $recordCek = PolisPropertiCek::firstOrNew(['polis_id', $record->id]); 
-            // $recordCek->fill($request->only($recordCek->fillable));
-            // $recordCek->save();
-            
-            // $recordNilai = PolisPropertiNilai::firstOrNew(['polis_id', $record->id]); 
-            // $recordNilai->fill($request->only($recordNilai->fillable));
-            // $recordNilai->save();
+            $recordCek = PolisPropertiCek::firstOrNew(['polis_id' => $record->id]); 
+            $recordCek->fill($request->only($recordCek->getFillable()));
+            $recordCek->save();
 
+            $recordNilai = PolisPropertiNilai::firstOrNew(['polis_id' => $record->id]); 
+            $recordNilai->fill($request->only($recordNilai->getFillable()));
+            $recordNilai->save();
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Berhasil Ditambahkan | status = Penawaran",
