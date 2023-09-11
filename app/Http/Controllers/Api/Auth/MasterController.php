@@ -7,25 +7,29 @@ use App\Models\Auth\User;
 use Illuminate\Http\Request;
 use App\Models\Master\Geo\City;
 use App\Models\Master\Geo\Village;
+use App\Models\Asuransi\PolisMobil;
 use App\Models\Master\Geo\District;
 use App\Models\Master\Geo\Province;
 use App\Http\Controllers\Controller;
+use App\Models\AsuransiMotor\PolisMotor;
 use App\Models\Master\DatabaseMobil\Merk;
 use App\Models\Master\DatabaseMobil\Seri;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Master\DatabaseMobil\Tahun;
 use App\Http\Controllers\Api\BaseController;
 use App\Models\Master\DatabaseMobil\KodePlat;
+use App\Models\AsuransiProperti\PolisProperti;
 use App\Models\Master\DatabaseMobil\TipeMobil;
+use App\Models\Master\AsuransiProperti\Okupasi;
+use App\Models\AsuransiPerjalanan\PolisPerjalanan;
 use App\Models\Master\AsuransiMobil\AsuransiMobil;
 use App\Models\Master\AsuransiMobil\TipePemakaian;
+use App\Models\Master\AsuransiMotor\AsuransiMotor;
 use App\Models\Master\DatabaseMobil\TipeKendaraan;
 use App\Models\Master\AsuransiMobil\KondisiKendaraan;
 use App\Models\Master\AsuransiMobil\LuasPertanggungan;
-use App\Models\Master\AsuransiMotor\AsuransiMotor;
-use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
 use App\Models\Master\AsuransiProperti\AsuransiProperti;
-use App\Models\Master\AsuransiProperti\Okupasi;
+use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
 
 class MasterController extends BaseController
 {
@@ -351,6 +355,78 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Perjalanan",
+                'data' => $record
+
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ]);
+        }
+    }
+
+    public function selectPolisMobilByAgent($id){
+        try{
+            $record =  PolisMobil::where('agent_id', $id)->get();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Polis Mobil",
+                'data' => $record
+
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ]);
+        }
+    }
+
+    public function selectPolisMotorByAgent($id){
+        try{
+            $record =  PolisMotor::where('agent_id', $id)->get();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Polis Motor",
+                'data' => $record
+
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ]);
+        }
+    }
+
+    public function selectPolisPropertiByAgent($id){
+        try{
+            $record =  PolisProperti::where('agent_id', $id)->get();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Polis Properti",
+                'data' => $record
+
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ]);
+        }
+    }
+
+    public function selectPolisPerjalananByAgent($id){
+        try{
+            $record =  PolisPerjalanan::where('agent_id', $id)->get();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Polis Mobil",
                 'data' => $record
 
             ]);

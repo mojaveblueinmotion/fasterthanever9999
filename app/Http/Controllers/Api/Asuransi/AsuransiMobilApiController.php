@@ -40,11 +40,13 @@ class AsuransiMobilApiController extends BaseController
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Berhasil Ditambahkan | status = Penawaran",
+                'data' => $record
             ]);
         }catch(Exception $e){
             return response()->json([
                 'success' => false,
-                'message' => $e
+                'message' => $e,
+                'data' => $record
             ]);
         }
     }
@@ -92,11 +94,13 @@ class AsuransiMobilApiController extends BaseController
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Berhasil Diupdate | status = pending",
+                'data' => $record
             ]);
         }catch(Exception $e){
             return response()->json([
                 'success' => false,
-                'message' => $e
+                'message' => $e,
+                'data' => $record
             ]);
         }
     }

@@ -24,6 +24,7 @@ class PolisMobil extends Model
     protected $fillable = [
         'no_asuransi',
         'tanggal',
+        'no_max',
         'agent_id',
         'asuransi_id',
         'name',

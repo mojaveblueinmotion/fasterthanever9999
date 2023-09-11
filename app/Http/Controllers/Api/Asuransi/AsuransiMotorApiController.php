@@ -40,6 +40,7 @@ class AsuransiMotorApiController extends BaseController
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Motor Berhasil Ditambahkan | status = Penawaran",
+                'data' => $record
             ]);
         }catch(Exception $e){
             return response()->json([
@@ -92,6 +93,7 @@ class AsuransiMotorApiController extends BaseController
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Motor Berhasil Diupdate | status = pending",
+                'data' => $record
             ]);
         }catch(Exception $e){
             return response()->json([

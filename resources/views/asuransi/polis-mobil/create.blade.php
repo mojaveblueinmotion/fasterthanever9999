@@ -61,31 +61,4 @@
 </div>
 @endsection
 
-@push('scripts')
-<script>
-	$(function () {
-		initDateStart();
-	});
-</script>
-<script>
-	$('.modal-dialog').removeClass('modal-md').addClass('modal-lg');
-</script>
-<script>
-	var initDateStart = function () {
-		$('.modal-body').on('changeDate', 'input.tgl_purchase_order', function (value) {
-			var me = $(this);
-			if (me.val()) {
-				var startDate = new Date(value.date.valueOf());
-				var tgl_kirim = $('.tgl_kirim');
-				tgl_kirim.prop('disabled', false)
-						.val(me.val())
-						.datepicker('setStartDate', startDate)
-						.focus();
-			}
-		});
-	}
-</script>
-@endpush
-
-
 

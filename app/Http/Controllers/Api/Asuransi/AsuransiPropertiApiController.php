@@ -38,6 +38,7 @@ class AsuransiPropertiApiController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Berhasil Ditambahkan | status = Penawaran",
+                'data' => $record
             ]);
         }catch(Exception $e){
             return response()->json([
@@ -85,6 +86,7 @@ class AsuransiPropertiApiController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Berhasil Diupdate | status = pending",
+                'data' => $record
             ]);
         }catch(Exception $e){
             return response()->json([

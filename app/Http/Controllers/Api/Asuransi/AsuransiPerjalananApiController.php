@@ -27,6 +27,7 @@ class AsuransiPerjalananApiController extends BaseController
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Perjalanan Berhasil Ditambahkan | status = Penawaran",
+                'data' => $record
             ]);
         }catch(Exception $e){
             return response()->json([
@@ -74,6 +75,7 @@ class AsuransiPerjalananApiController extends BaseController
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Perjalanan Berhasil Diupdate | status = pending",
+                'data' => $record
             ]);
         }catch(Exception $e){
             return response()->json([
